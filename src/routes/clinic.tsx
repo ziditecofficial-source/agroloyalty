@@ -315,7 +315,13 @@ function AiCropDoctorSection() {
                     className="flex items-center justify-between gap-3 rounded-xl border border-border bg-muted/30 p-2.5 text-xs"
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="text-2xl">{p.emoji}</span>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary/40 p-1 border border-border/40 overflow-hidden">
+                        {p.image ? (
+                          <img src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
+                        ) : (
+                          <span className="text-2xl">{p.emoji}</span>
+                        )}
+                      </div>
                       <div className="min-w-0">
                         <p className="font-bold text-foreground truncate">{p.name}</p>
                         <p className="text-[11px] text-muted-foreground font-mono">

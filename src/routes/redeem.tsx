@@ -47,11 +47,20 @@ function RedeemPage() {
       </div>
       <div className="mt-3 grid grid-cols-2 gap-3">
         {list.map((r) => (
-          <div key={r.id} className="rounded-2xl bg-card p-3 shadow-soft">
-            <div className="flex h-20 items-center justify-center rounded-xl bg-secondary text-4xl">{r.emoji}</div>
-            <p className="mt-2 text-xs font-semibold">{r.name}</p>
-            <p className="text-xs font-bold text-accent-foreground">{pts(r.cost)}</p>
-            <button disabled={points < r.cost} onClick={() => setPending(r)} className="mt-2 w-full rounded-xl bg-primary py-2 text-xs font-semibold text-primary-foreground active:animate-pop disabled:opacity-40">
+          <div key={r.id} className="clay-card clay-card-hover p-3 flex flex-col justify-between">
+            <div className="relative flex h-24 items-center justify-center rounded-xl bg-gradient-to-b from-secondary/40 to-secondary/80 p-1.5 overflow-hidden border border-border/40 shadow-xs">
+              {r.image ? (
+                <img src={r.image} alt={r.name} className="h-full w-full object-contain mix-blend-multiply" />
+              ) : (
+                <span className="text-4xl">{r.emoji}</span>
+              )}
+              <span className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-card/90 text-[10px] shadow-xs">
+                {r.emoji}
+              </span>
+            </div>
+            <p className="mt-2 text-xs font-bold text-foreground line-clamp-2">{r.name}</p>
+            <p className="text-xs font-extrabold text-primary">{pts(r.cost)}</p>
+            <button disabled={points < r.cost} onClick={() => setPending(r)} className="clay-btn-primary mt-2 w-full py-2 text-xs font-bold text-primary-foreground disabled:opacity-40 transition">
               {points < r.cost ? `Need ${pts(r.cost - points)}` : "Claim Reward"}
             </button>
           </div>

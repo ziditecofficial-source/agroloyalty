@@ -369,7 +369,17 @@ export function StorePage() {
                       key={i}
                       className="flex items-center gap-3 rounded-2xl border border-border/80 bg-card p-3 shadow-soft"
                     >
-                      <span className="text-3xl">{c.product.emoji}</span>
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-secondary/40 p-1 border border-border/40 overflow-hidden">
+                        {c.product.image ? (
+                          <img
+                            src={c.product.image}
+                            alt={c.product.name}
+                            className="h-full w-full object-contain mix-blend-multiply"
+                          />
+                        ) : (
+                          <span className="text-3xl">{c.product.emoji}</span>
+                        )}
+                      </div>
                       <div className="flex-1 min-w-0 text-xs">
                         <p className="font-bold text-foreground truncate">{c.product.name}</p>
                         <p className="text-[11px] text-muted-foreground font-mono mt-0.5">
@@ -728,17 +738,31 @@ function ProductCard({
       className="clay-card clay-card-hover group flex flex-col justify-between p-3.5 cursor-pointer"
     >
       <div>
-        {/* Emoji Image Container */}
-        <div className="relative flex h-28 items-center justify-center rounded-2xl bg-secondary/70 text-5xl group-hover:scale-105 transition shadow-xs">
-          {product.emoji}
+        {/* Real Product Image Container */}
+        <div className="relative flex h-36 items-center justify-center rounded-2xl bg-gradient-to-b from-secondary/40 to-secondary/80 p-2 overflow-hidden group-hover:scale-102 transition shadow-xs border border-border/40">
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-full w-full object-contain mix-blend-multiply group-hover:scale-105 transition"
+              loading="lazy"
+            />
+          ) : (
+            <span className="text-5xl">{product.emoji}</span>
+          )}
+
           {/* Section 6.1: Points tag */}
           <span className="absolute left-2 top-2 rounded-full bg-gold px-2.5 py-0.5 text-[9px] font-bold text-white shadow-xs">
             +{pts(packMode === "unit" ? product.points : product.points * product.cartonQty)}
           </span>
 
-          {product.restricted && (
+          {product.restricted ? (
             <span className="absolute right-2 top-2 rounded-full bg-destructive px-2 py-0.5 text-[9px] font-bold text-white shadow-xs">
               Restricted
+            </span>
+          ) : (
+            <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-card/90 backdrop-blur-xs text-xs shadow-xs border border-border/50">
+              {product.emoji}
             </span>
           )}
         </div>
@@ -833,8 +857,21 @@ function ProductDetailModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md p-0 overflow-hidden rounded-3xl bg-card border-none shadow-card max-h-[88vh] flex flex-col">
         {/* Header */}
-        <div className="bg-secondary/60 p-6 flex flex-col items-center justify-center relative text-center">
-          <span className="text-6xl mb-2">{product.emoji}</span>
+        <div className="bg-gradient-to-b from-secondary/50 to-secondary/80 p-6 flex flex-col items-center justify-center relative text-center border-b border-border/50">
+          <div className="relative mb-3 flex h-36 w-36 items-center justify-center rounded-2xl bg-white/70 p-2 shadow-xs border border-border/40">
+            {product.image ? (
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-full w-full object-contain mix-blend-multiply"
+              />
+            ) : (
+              <span className="text-6xl">{product.emoji}</span>
+            )}
+            <span className="absolute -top-1.5 -right-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-card shadow-xs text-sm border border-border/60">
+              {product.emoji}
+            </span>
+          </div>
           <span className="rounded-full bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary">
             {product.category}
           </span>
@@ -1005,7 +1042,13 @@ function DiseaseDetailModal({
                   className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-2.5 shadow-xs"
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="text-2xl">{p.emoji}</span>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary/40 p-1 border border-border/40 overflow-hidden">
+                      {p.image ? (
+                        <img src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
+                      ) : (
+                        <span className="text-2xl">{p.emoji}</span>
+                      )}
+                    </div>
                     <div className="min-w-0">
                       <p className="font-bold text-foreground truncate">{p.name}</p>
                       <p className="text-[11px] text-muted-foreground font-mono">

@@ -216,10 +216,21 @@ function Home() {
             <Link
               key={p.id}
               to="/store"
-              className="clay-card clay-card-hover p-3.5 flex flex-col justify-between group"
+              className="clay-card clay-card-hover p-3 flex flex-col justify-between group"
             >
-              <div className="flex h-20 items-center justify-center rounded-xl bg-secondary/60 text-4xl group-hover:scale-105 transition shadow-xs">
-                {p.emoji}
+              <div className="relative flex h-24 items-center justify-center rounded-xl bg-gradient-to-b from-secondary/40 to-secondary/80 p-1.5 overflow-hidden group-hover:scale-102 transition shadow-xs border border-border/40">
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="h-full w-full object-contain mix-blend-multiply group-hover:scale-105 transition"
+                  />
+                ) : (
+                  <span className="text-4xl">{p.emoji}</span>
+                )}
+                <span className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-card/90 text-[10px] shadow-xs">
+                  {p.emoji}
+                </span>
               </div>
               <div className="mt-2.5">
                 <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{p.category}</span>
@@ -246,7 +257,7 @@ function Home() {
             </span>
             <h4 className="mt-1 text-xs font-bold text-foreground">Beating black pod in the rainy season</h4>
             <p className="mt-1 text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">
-              Remove and bury infected pods weekly to break the sporulation cycle before spraying Ridomil Gold.
+              Remove and bury infected pods weekly to break the sporulation cycle before spraying PLANTOMIL SUPER.
             </p>
             <Link to="/learn" className="mt-2.5 inline-flex items-center gap-1 text-[11px] font-bold text-primary hover:underline">
               Read in Learn Hub <ChevronRight className="h-3 w-3" />
