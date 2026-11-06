@@ -1,0 +1,92 @@
+export type Lang = "English" | "Français";
+
+const FR: Record<string, string> = {
+  // Navigation & Shell
+  Home: "Accueil",
+  Shop: "Boutique",
+  Store: "Boutique",
+  Doctor: "Docteur",
+  Learn: "Apprendre",
+  Account: "Compte",
+  "Plant Clinic & Lab": "Clinique des Plantes",
+  Orders: "Commandes",
+  Wallet: "Portefeuille",
+  Referrals: "Parrainage",
+  "Live Chat": "Discussion",
+
+  // Header & Greetings
+  "Good morning": "Bonjour",
+  "Good afternoon": "Bon après-midi",
+  "Good evening": "Bonsoir",
+  "Scan at Counter": "Scanner en caisse",
+  "Redeem Rewards": "Récompenses",
+  "Order Inputs": "Commander Intrants",
+  "Book Clinic/Lab": "Réserver Clinique",
+  "Track Deliveries": "Suivre Livraisons",
+  "Refer & Earn": "Parrainer & Gagner",
+  "Active Orders": "Commandes en cours",
+  "Notifications": "Notifications",
+
+  // Shop & Products
+  "By category": "Par catégorie",
+  "By disease / pest": "Par ravageur / maladie",
+  "Search products": "Rechercher un produit ou ravageur",
+  "Add to Cart": "Ajouter au panier",
+  "Place Order": "Passer la commande",
+  "Checkout": "Paiement",
+  "Earn": "Gagnez",
+  "points": "points",
+  "In Stock": "En stock",
+  "Low Stock": "Stock faible",
+  "Out at branch": "Rupture agence",
+  "Cart is empty": "Le panier est vide",
+  "Unit": "Unité",
+  "Carton": "Carton",
+  "Subtotal": "Sous-total",
+  "Delivery Fee": "Frais de livraison",
+  "Total": "Total",
+  "Apply Coupon": "Appliquer coupon",
+  "Use points / credit": "Utiliser points / crédit",
+  "Restricted Product": "Produit Réglementé",
+  "Agronomist approval required": "Accord de l'agronome requis",
+  "Request Approval": "Demander accord",
+  "Usage & Dosage": "Utilisation & Posologie",
+  "Safety & PPE": "Sécurité & Équipements",
+
+  // Doctor & Clinic
+  "AI Crop Doctor": "Docteur des Plantes IA",
+  "Diagnose": "Diagnostiquer",
+  "Consultations": "Consultations",
+  "Lab Tests": "Analyses Labo",
+  "Upload leaf photo": "Téléverser photo de feuille",
+  "Take clear photo": "Prendre photo nette",
+  "Analyzing symptoms": "Analyse des symptômes en cours...",
+  "Likely Issue": "Problème probable",
+  "Recommended Products": "Produits recommandés",
+  "Book Agronomist": "Réserver un agronome",
+  "Disclaimer": "Conseil IA indicatif, non une garantie absolue.",
+
+  // Learn
+  "Learning Feed": "Fil de Formation",
+  "Campaigns & Offers": "Campagnes & Offres",
+  "Farmer Workshops": "Ateliers Agricoles",
+  "Read Article": "Lire l'article",
+  "Register": "S'inscrire",
+  "Registered": "Inscrit",
+  "Spots Left": "Places restantes",
+
+  // Account & Orders
+  "Delivery Tracking": "Suivi de livraison",
+  "Handover OTP": "Code OTP de remise",
+  "Rider Details": "Détails du livreur",
+  "Call Rider": "Appeler livreur",
+  "Confirm Received": "Confirmer réception",
+  "Rate Delivery": "Évaluer la livraison",
+  "Referral Code": "Code de parrainage",
+  "Share Code": "Partager le code",
+  "Referred Farmers": "Agriculteurs parrainés",
+  "Credit Earned": "Crédit gagné",
+  "Use on products only": "Utilisable uniquement sur les produits",
+};
+
+export const tr = (lang: Lang, s: string) => (lang === "Français" ? FR[s] ?? s : s);

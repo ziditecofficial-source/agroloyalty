@@ -1,0 +1,12 @@
+# Roadmap (working demo, sample data)
+- [x] Phone + OTP sign-up with referral code; farmer / cooperative / walk-in profiles
+- [x] Catalogue by category or pest/disease; product page with dosage, safety, articles, consult link
+- [x] Cart + pay with MTN MoMo / Orange Money / card (simulated, no duplicate orders); reorder in one tap
+- [x] Loyalty points on delivered purchases
+- [x] Referrals: personal code, commission as product credit only
+- [x] Delivery tracking: live map + timeline, rate delivery
+- [x] Live chat with departments, offline queue
+- [x] Agronomist consultations: slots, history, reminders
+- [x] Learning feed: guides, campaigns, workshops, discounts
+- [x] AI Crop Doctor (simulated), weather, English/French
+- [ ] Real backend (accounts, saved data, real payments) — later, after demo review
