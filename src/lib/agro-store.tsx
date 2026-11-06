@@ -261,7 +261,7 @@ export function AgroProvider({ children }: { children: ReactNode }) {
     farmSize: "4.5",
     crops: ["Cocoa", "Corn"],
     livestock: "Poultry (200 birds)",
-    preferredBranch: "Widikum",
+    preferredBranch: "Bamenda",
     payout: "MTN Mobile Money",
     payoutNumber: "+237 677 00 11 22",
     language: "English",

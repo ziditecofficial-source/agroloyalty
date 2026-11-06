@@ -638,7 +638,7 @@ function LabTestsSection() {
           <FlaskConical className="h-4 w-4" /> Certified Soil, Water & Tissue Laboratory
         </h3>
         <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-          Bring your soil or water samples to any Agro Hospital branch ({branch}, Widikum, Bamenda, Yaoundé, Mamfe, Kumba). Full analysis reports issued in 48 hours.
+          Bring your soil or water samples to any Agro Hospital branch (Bamenda, Yaounde). Full analysis reports issued in 48 hours.
         </p>
       </div>
 

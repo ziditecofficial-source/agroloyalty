@@ -11,7 +11,7 @@ export function printDocument(title: string, bodyHtml: string) {
   .foot{margin-top:40px;font-size:12px;color:#64748b}
   </style></head><body>
   <div class="lh"><div><h1>Agro Hospital PLC</h1><small>Farmer's Voice | Quality in Diversity</small></div>
-  <div style="text-align:right;font-size:12px">Widikum • Bamenda • Yaoundé • Mamfe • Kumba<br/>Cameroon</div></div>
+  <div style="text-align:right;font-size:12px">Bamenda • Yaounde<br/>Cameroon</div></div>
   ${bodyHtml}
   <div class="foot">Thank you for choosing Agro Hospital PLC. This document was generated from the Customer Portal.</div>
   <script>window.onload=()=>window.print()</script></body></html>`);
