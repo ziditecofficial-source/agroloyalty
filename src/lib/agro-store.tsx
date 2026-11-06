@@ -197,8 +197,8 @@ export function AgroProvider({ children }: { children: ReactNode }) {
       confidence: "High",
       confidencePct: 94,
       explanation: "Water-soaked lesions expanding rapidly on cocoa pod surface with typical white sporulation.",
-      prevention: "Improve canopy shade ventilation, remove and bury infected pods, apply Ridomil Gold Plus.",
-      recommendedProductIds: ["p3", "p4", "p11"],
+      prevention: "Improve canopy shade ventilation, remove and bury infected pods, apply PLANTOMIL SUPER and copper fungicide.",
+      recommendedProductIds: ["p3", "p5", "p16"],
       date: "2026-11-04",
     },
   ]);
